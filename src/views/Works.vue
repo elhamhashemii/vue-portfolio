@@ -1,0 +1,3 @@
+<template>
+    <h1>This is works</h1>
+</template>

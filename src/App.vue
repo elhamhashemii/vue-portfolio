@@ -1,30 +1,26 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+  <div class="main-wrapper">
+    <main-nav></main-nav>
+    <router-view/>
   </div>
-  <router-view/>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+<script>
+import MainNav from './components/Navbar/MainNav.vue'
+export default {
+  components:{
+    MainNav
   }
 }
+</script>
+
+
+<style lang="scss">
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+.main-wrapper{
+  font-family: 'Poppins';
+  padding: 5px;
+}
 </style>
+
