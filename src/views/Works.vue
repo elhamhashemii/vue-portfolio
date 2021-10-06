@@ -1,3 +1,12 @@
 <template>
-    <h1>This is works</h1>
+    <works-preview></works-preview>
 </template>
+
+<script>
+import WorksPreview from '../components/Preview/WorksPreview.vue'
+export default {
+    components: {
+        WorksPreview
+    }
+}
+</script>

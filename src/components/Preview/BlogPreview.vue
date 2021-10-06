@@ -6,26 +6,41 @@
                 <div><router-link to="/blog">View All</router-link></div>
             </div>
             <div class="b-row">
-                <div class="card col-6">
+                <!-- <div class="card col-6">
                     <h2 class="card-title">Title</h2>
-                    <span>12 Feb 2020 | Design, Pattern</span>
+                    <p>
+                        <span>12 Feb 2020</span>
+                        <span>Design, Pattern</span>
+                    </p>
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum, error
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum, error
                     </p>
-                </div>
-                <div class="card col-6">
-                    <h2 class="card-title">Title</h2>
-                    <span>12 Feb 2020 | Figma, Icon Design</span>
+                </div> -->
+                <div class="card col-6" v-for="post in posts" :key="post.id">
+                    <h2 class="card-title">{{ post.title }}</h2>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum, error
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum, error
+                        <span>{{ post.date }}</span>
+                        <span>{{ post.category }}</span>
+                    </p>
+                    <p>
+                        {{ post.des }}
                     </p>
                 </div>
             </div>
         </div>
     </div>
 </template>
+
+<script>
+export default {
+    computed:{
+        posts(){
+            return this.$store.state.posts;
+        }
+    }
+}
+</script>
 
 <style lang="scss" scoped>
 @import "@/assets/styles.scss";
